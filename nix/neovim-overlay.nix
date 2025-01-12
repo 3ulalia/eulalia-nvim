@@ -79,6 +79,15 @@ with final.pkgs.lib; let
     # ^ libraries that other plugins depend on
     # bleeding-edge plugins from flake inputs
     # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
+    (mkNvimPlugin 
+      (pkgs.fetchFromGitHub {
+        owner = "craftzdog";
+        repo = "solarized-osaka.nvim";
+        rev = "725064069861811398e6d7f4653e6be6d760a07d";
+        sha256 = "8z7ULBp2oEwLoLPgtUREORbB/GZjzXxHXB1cIKUU024=";
+      } // {lastModifiedDate = "2025-01-07";})
+      "solarized-osaka"
+    )
     # ^ bleeding-edge plugins from flake inputs
     which-key-nvim
   ];
@@ -86,7 +95,7 @@ with final.pkgs.lib; let
   extraPackages = with pkgs; [
     # language servers, etc.
     lua-language-server
-    nil # nix LSP
+    nixd # nix LSP
   ];
 in {
   # This is the neovim derivation
