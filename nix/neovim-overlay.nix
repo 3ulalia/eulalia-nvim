@@ -40,13 +40,15 @@ with final.pkgs.lib; let
     cmp-path # file paths as completion source | https://github.com/hrsh7th/cmp-path/
     cmp-nvim-lua # neovim lua API as completion source | https://github.com/hrsh7th/cmp-nvim-lua/
     cmp-cmdline # cmp command line suggestions
-    cmp-cmdline-history # cmp command line history suggestions
+    cmp-cmdline-history # cmp command line history suggestions*/
     # ^ nvim-cmp extensions
     # git integration plugins
     diffview-nvim # https://github.com/sindrets/diffview.nvim/
     neogit # https://github.com/TimUntersberger/neogit/
     gitsigns-nvim # https://github.com/lewis6991/gitsigns.nvim/
     vim-fugitive # https://github.com/tpope/vim-fugitive/
+    lazygit-nvim
+    pkgs.lazygit
     # ^ git integration plugins
     # telescope and extensions
     telescope-nvim # https://github.com/nvim-telescope/telescope.nvim/
@@ -96,6 +98,7 @@ with final.pkgs.lib; let
     # language servers, etc.
     lua-language-server
     nixd # nix LSP
+    pkgs.alejandra
   ];
 in {
   # This is the neovim derivation
