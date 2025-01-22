@@ -62,6 +62,7 @@ with final.pkgs.lib; let
     nvim-treesitter-context # nvim-treesitter-context
     # ^ UI
     # language support
+    rustaceanvim
     # ^ language support
     # navigation/editing enhancement plugins
     vim-unimpaired # predefined ] and [ navigation keymaps | https://github.com/tpope/vim-unimpaired/
