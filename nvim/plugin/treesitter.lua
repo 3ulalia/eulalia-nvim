@@ -3,11 +3,12 @@ if vim.g.did_load_treesitter_plugin then
 end
 vim.g.did_load_treesitter_plugin = true
 
-local configs = require('nvim-treesitter.configs')
+local configs = require('nvim-treesitter')
 vim.g.skip_ts_context_comment_string_module = true
 
 ---@diagnostic disable-next-line: missing-fields
 configs.setup {
+  --[[ old version of treesitter's config (master vs main) 
   -- ensure_installed = 'all',
   -- auto_install = false, -- Do not automatically install missing parsers when entering buffer
   highlight = {
@@ -83,7 +84,7 @@ configs.setup {
         ['dF'] = '@class.outer',
       },
     },
-  },
+  }, ]]
 }
 
 require('treesitter-context').setup {
