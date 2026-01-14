@@ -61,6 +61,11 @@ with final.pkgs.lib; let
     statuscol-nvim # Status column | https://github.com/luukvbaal/statuscol.nvim/
     nvim-treesitter-context # nvim-treesitter-context
     # ^ UI
+    # Motion
+    precognition-nvim
+    leap-nvim
+    treewalker-nvim
+    # ^ Motion
     # language support
     # ^ language support
     # navigation/editing enhancement plugins
