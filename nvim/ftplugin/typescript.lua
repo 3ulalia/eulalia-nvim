@@ -20,6 +20,8 @@ vim.lsp.start {
   }
 }
 
+--[[
+
 require("ts-error-translator").setup({
   -- Auto-attach to LSP servers for TypeScript diagnostics (default: true)
   auto_attach = true,
@@ -35,8 +37,8 @@ require("ts-error-translator").setup({
     "vtsls",
   },
 })
-
+-- ]]
 
 -- require('tsc').setup()
 
-require('nvim-eslint').setup({})
+
