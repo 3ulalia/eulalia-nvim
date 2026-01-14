@@ -101,9 +101,12 @@ with final.pkgs.lib; let
 
   extraPackages = with pkgs; [
     # language servers, etc.
-    lua-language-server
+    lua-language-server # duh
     nil # nix LSP
     alejandra # nix formatter
+    rust-analyzer
+    ocamlPackages.ocaml-lsp
+    # ^ language servers
   ];
 in {
   # This is the neovim derivation
