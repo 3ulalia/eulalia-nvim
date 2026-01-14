@@ -38,7 +38,7 @@
           inputs.gen-luarc.overlays.default
 
           # add overlay to access awesome-neovim
-          inputs.flake-awesome-neovim-plugins.overlays.default
+#          inputs.flake-awesome-neovim-plugins.overlays.default
         ];
       };
       shell = pkgs.mkShell {

@@ -94,7 +94,7 @@ with final.pkgs.lib; let
     promise-async
     vim-repeat
     nui-nvim
-    null-ls-nvim
+    none-ls-nvim
     nvim-lspconfig 
     # ^ libraries that other plugins depend on
     # bleeding-edge plugins from flake inputs
