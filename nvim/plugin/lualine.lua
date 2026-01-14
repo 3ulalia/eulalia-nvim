@@ -33,10 +33,26 @@ local function extra_mode_status()
   return ''
 end
 
+local filetype_table = {
+  TelescopePrompt = 'Telescope',
+  dashboard = 'Dashboard',
+  fzf = 'FZF',
+}
+
+filetype_table["neo-tree"] = "tree"
+
 require('lualine').setup {
   globalstatus = true,
   sections = {
-    lualine_b = {'branch', 'diff'},
+    lualine_b = {
+      'branch',
+      {
+        'diff',
+        source = function ()
+         return vim.b.gitsigns_status
+        end,
+      }
+    },
     lualine_c = {
       { 'filename', path = 1, file_status = true, newfile_status = true, },
       { 'diagnostics',
@@ -61,6 +77,9 @@ require('lualine').setup {
   },
   options = {
     theme = 'auto',
+    ignore_focus = {
+      'neo-tree',
+    },
   },
   -- Example top tabline configuration (this may clash with other plugins)
   tabline = {
@@ -72,8 +91,17 @@ require('lualine').setup {
     },
     lualine_b = {
       {
-        'windows',
-        mode = 2,
+        'buffers',
+        show_filename_only = true,
+        show_bufnr = true,
+        mode = 4,
+        filetype_names = filetype_table,
+        buffers_color = {
+
+          -- Same values as the general color option can be used here.
+          active = 'lualine_b_normal', -- Color for active buffer.
+          inactive = 'lualine_b_inactive', -- Color for inactive buffer.
+        },
       },
     },
     lualine_c = {},
@@ -98,5 +126,5 @@ require('lualine').setup {
       { navic.get_location, cond = navic.is_available },
     },
   },
-  extensions = { 'fugitive', 'fzf', 'toggleterm', 'quickfix' },
+  extensions = { 'fzf', 'toggleterm', 'quickfix', 'neo-tree' },
 }
