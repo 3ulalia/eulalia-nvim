@@ -109,7 +109,7 @@ with final.pkgs.lib; let
       "solarized-osaka"
     )
     # ^ bleeding-edge plugins from flake inputs
-    ] ++ (with pkgs.awesomeNeovimPlugins; [
+    ] ++ (with inputs.flake-awesome-neovim-plugins.packages.x86_64-linux; [ # FIXME
       ts-error-translator-nvim
       prettier-nvim
       nvim-eslint
