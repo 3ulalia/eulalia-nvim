@@ -90,14 +90,14 @@ cmp.setup {
       end
     end, { 'i', 'c', 's' }),
     -- toggle completion
-    ['<C-e>'] = cmp.mapping(function(_)
+    ['<C-y>'] = cmp.mapping(function(_)
       if cmp.visible() then
         cmp.close()
       else
         cmp.complete()
       end
     end, { 'i', 'c', 's' }),
-    ['<C-y>'] = cmp.mapping.confirm {
+    ['<Tab>'] = cmp.mapping.confirm {
       select = true,
     },
   },
