@@ -1,4 +1,4 @@
-if vim.fn.executable('ts_ls') ~=1 then
+if vim.fn.executable('typescript-language-server') ~=1 then
   return
 end
 
@@ -14,6 +14,10 @@ vim.lsp.start {
   cmd = { "typescript-language-server", "--stdio" },
   root_dir = vim.fs.dirname(vim.fs.find(root_files, { upward = true })[1]),
   capabilities = require('user.lsp').make_client_capabilities(),
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+  init_options = {
+    hostInfo = "neovim"
+  }
 }
 
 require("ts-error-translator").setup({
@@ -31,3 +35,6 @@ require("ts-error-translator").setup({
     "vtsls",
   },
 })
+
+
+require('tsc').setup()

@@ -104,6 +104,7 @@ with final.pkgs.lib; let
     lua-language-server # duh
     nil # nix LSP
     alejandra # nix formatter
+    nodePackages.typescript-language-server
     rust-analyzer
     ocamlPackages.ocaml-lsp
     # ^ language servers
