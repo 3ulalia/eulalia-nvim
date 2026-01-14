@@ -20,6 +20,12 @@ vim.lsp.start {
       formatting = {
         command = {"alejandra"},
       },
+      nixos = {
+        expr = "(builtins.getFlake (builtins.toString ~/flake)).nixosConfigurations.${builtins.replaceStrings ['\n'] [''] (builtins.readFile /etc/hostname)}.options",
+      },
+      home_manager = {
+        expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.${builtins.replaceStrings ['\n'] [''] (builtins.readFile /etc/hostname)}.options.home-manager.users.type.getSubOptions []",
+      },
     },
   },
 --  name = 'nil_ls',
