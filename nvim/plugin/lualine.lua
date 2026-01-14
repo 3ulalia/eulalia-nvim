@@ -7,6 +7,10 @@ local navic = require('nvim-navic')
 navic.setup {
   lsp = {
     auto_attach = true,
+    preference = {
+      "ts_ls",
+      "pyright"
+    },
   },
   click = true,
   highlight = false,  -- TODO
