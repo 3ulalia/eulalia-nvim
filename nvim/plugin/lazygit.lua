@@ -3,9 +3,9 @@ if vim.g.did_load_lazygit_plugin then
 end
 vim.g.did_load_lazygit_plugin = true
 
-local lazygit = require('lazygit-nvim')
+local lazygit = require('lazygit')
 
-lazygit.setup {}
+-- lazygit.setup {}
 
 require('telescope').load_extension('lazygit')
 
