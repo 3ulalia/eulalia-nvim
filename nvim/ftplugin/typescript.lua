@@ -39,4 +39,4 @@ require("ts-error-translator").setup({
 
 -- require('tsc').setup()
 
-require('nvim-eslint').setup()
+require('nvim-eslint').setup({})
