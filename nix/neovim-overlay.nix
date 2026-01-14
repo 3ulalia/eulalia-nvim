@@ -71,6 +71,9 @@ with final.pkgs.lib; let
     # ^ Motion
     # language support
     rustaceanvim #  A heavily modified fork of rust-tools.nvim that does not require a setup call and does not depend on nvim-lspconfig. | https://github.com/mrcjkb/rustaceanvim
+    neotest
+    neotest-vitest
+    FixCursorHold-nvim
     # ^ language support
     # navigation/editing enhancement plugins
     vim-unimpaired # predefined ] and [ navigation keymaps | https://github.com/tpope/vim-unimpaired/
@@ -91,6 +94,8 @@ with final.pkgs.lib; let
     promise-async
     vim-repeat
     nui-nvim
+    null-ls-nvim
+    nvim-lspconfig 
     # ^ libraries that other plugins depend on
     # bleeding-edge plugins from flake inputs
     # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
@@ -103,6 +108,12 @@ with final.pkgs.lib; let
       } // {lastModifiedDate = "2025-01-07";})
       "solarized-osaka"
     )
+    # ^ bleeding-edge plugins from flake inputs
+    ] ++ (with pkgs.awesomeNeovimPlugins; [
+      ts-error-translator-nvim
+      prettier-nvim
+      nvim-eslint
+    ]);
     /*
     (mkNvimPlugin
       (pkgs.fetchFromGitHub {
@@ -112,7 +123,7 @@ with final.pkgs.lib; let
         sha256 = "sha256-Xs2m09H7W/H5GikZmhg3+0eooKRfe6SUTDaks/QFZBY=";
       } // {lastModifiedDate = "2025-11-18";})
       "tree-comment-nvim"
-    )*/
+    )
     (mkNvimPlugin
       (pkgs.fetchFromGitHub {
         owner = "dmmulroy";
@@ -122,8 +133,7 @@ with final.pkgs.lib; let
       } // {lastModifiedDate = "2026-01-03";})
       "ts-error-translator-nvim"
     )
-    # ^ bleeding-edge plugins from flake inputs
-  ];
+    */
 
   extraPackages = with pkgs; [
     # language servers, etc.
@@ -133,9 +143,11 @@ with final.pkgs.lib; let
     nodePackages.typescript-language-server
     rust-analyzer
     ocamlPackages.ocaml-lsp
+    eslint
     # ^ language servers
     ripgrep
     lazygit
+    prettier
   ];
 in {
   # This is the neovim derivation

@@ -37,4 +37,6 @@ require("ts-error-translator").setup({
 })
 
 
-require('tsc').setup()
+-- require('tsc').setup()
+
+require('nvim-eslint').setup()
