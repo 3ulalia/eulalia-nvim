@@ -74,6 +74,7 @@ with final.pkgs.lib; let
     neotest
     neotest-vitest
     FixCursorHold-nvim
+    ocaml-nvim
     # ^ language support
     # navigation/editing enhancement plugins
     vim-unimpaired # predefined ] and [ navigation keymaps | https://github.com/tpope/vim-unimpaired/

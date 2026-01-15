@@ -95,9 +95,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     keymap.set('n', '<M-CR>', vim.lsp.buf.code_action, desc('[lsp] code action'))
     keymap.set('n', '<M-l>', vim.lsp.codelens.run, desc('[lsp] run code lens'))
     keymap.set('n', '<M-r>', vim.lsp.codelens.refresh, desc('[lsp] code lenses [r]efresh'))
-    keymap.set({'n', 'x'}, '<M-f>', function()
-      vim.lsp.buf.format { async = true, bufnr = vim.api.nvim_get_current_buf() }
-    end, desc('[lsp] [f]ormat buffer'))
+
     if client and client.server_capabilities.inlayHintProvider then
       keymap.set('n', '<M-h>', function()
         local current_setting = vim.lsp.inlay_hint.is_enabled { bufnr = bufnr }
