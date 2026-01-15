@@ -75,6 +75,8 @@ with final.pkgs.lib; let
     neotest-vitest
     FixCursorHold-nvim
     ocaml-nvim
+    conform-nvim
+    nvim-lint
     # ^ language support
     # navigation/editing enhancement plugins
     vim-unimpaired # predefined ] and [ navigation keymaps | https://github.com/tpope/vim-unimpaired/
@@ -114,6 +116,7 @@ with final.pkgs.lib; let
       ts-error-translator-nvim
       prettier-nvim
       nvim-eslint
+    # miniDYM
     ]);
     /*
     (mkNvimPlugin

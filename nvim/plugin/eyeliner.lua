@@ -14,3 +14,5 @@ require('todo-comments').setup()
 vim.keymap.set('n', '<leader>qt', '<cmd>TodoQuickFix<cr>', { desc = '[q]uickfix: open [t]odos' })
 vim.keymap.set('n', '<leader>lt', '<cmd>TodoLocList<cr>', {  desc = '[l]oclist: open [t]odos'  })
 vim.keymap.set('n', '<leader>fo', '<cmd>TodoTelescope<cr>', {desc = '[f]ind tod[o]s with telescope' })
+
+
