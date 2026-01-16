@@ -62,11 +62,13 @@ vim.lsp.start {
   settings = {
     lint = {
       enabled = true,
-      when = "onType",
     },
   },
 }
 
+vim.keymap.set('n', '<leader>tp', '<CMD>TypstTogglePreview<CR>', { desc = '[t]ypst: toggle [p]review' })
+vim.keymap.set('n', '<leader>tc', '<CMD>TypstPreviewFollowCursorToggle<CR>', { desc = '[t]ypst: toggle [c]ursor following' })
+vim.keymap.set('n', '<leader>ts', '<CMD>TypstPreviewSyncCursor<CR>', { desc = '[t]ypst: [s]ync cursor position' })
 
 require("img-clip").setup({
 

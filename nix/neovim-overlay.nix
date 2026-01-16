@@ -71,6 +71,8 @@ with final.pkgs.lib; let
     # ^ Motion
     # language support
     rustaceanvim #  A heavily modified fork of rust-tools.nvim that does not require a setup call and does not depend on nvim-lspconfig. | https://github.com/mrcjkb/rustaceanvim
+    typst-preview-nvim
+    img-clip-nvim
     neotest
     neotest-vitest
     FixCursorHold-nvim
