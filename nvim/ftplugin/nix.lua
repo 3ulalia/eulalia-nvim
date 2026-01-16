@@ -30,3 +30,11 @@ vim.lsp.start {
     },
   },
 }
+
+--[[
+vim.keymap.set('n', '<leader>nd', function()
+  require('telescope-manix').search({ cword = true })
+end, { desc = '[n]ix: search [d]ocs for word' })
+vim.keymap.set('n', '<leader>nD', require('telescope-manix').search, { desc = '[n]ix: search [D]ocs' })
+vim.keymap.set('n', '<leader>fu', telescope.extensions.undo.undo, { desc = '[f]ind in [u]ndolist' })
+]]--

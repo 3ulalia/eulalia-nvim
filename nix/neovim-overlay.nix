@@ -54,6 +54,9 @@ with final.pkgs.lib; let
     # telescope and extensions
     telescope-nvim # A highly extendable fuzzy finder over lists. | https://github.com/nvim-telescope/telescope.nvim/
     telescope-fzy-native-nvim # FZY style sorter that is compiled. | https://github.com/nvim-telescope/telescope-fzy-native.nvim
+    telescope-ui-select-nvim
+    telescope-manix
+    telescope-undo-nvim
     # telescope-smart-history-nvim # https://github.com/nvim-telescope/telescope-smart-history.nvim
     # ^ telescope and extensions
     # UI
@@ -147,6 +150,7 @@ with final.pkgs.lib; let
     nil # nix LSP
     alejandra # nix formatter
     statix # nix linter
+    manix # nix docs
     # ^ language servers
     ripgrep
     lazygit

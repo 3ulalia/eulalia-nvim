@@ -146,8 +146,23 @@ telescope.setup {
       override_generic_sorter = false,
       override_file_sorter = true,
     },
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {
+
+      }
+    },
+    undo = {
+
+    },
+    manix = {
+
+    },
   },
 }
 
 telescope.load_extension('fzy_native')
--- telescope.load_extension('smart_history')
+telescope.load_extension("ui-select")
+telescope.load_extension("undo")
+-- telescope.load_extension("manix") not rn
+
+vim.keymap.set('n', '<leader>fu', telescope.extensions.undo.undo, { desc = '[f]ind in [u]ndolist' })
