@@ -75,7 +75,6 @@ with final.pkgs.lib; let
     neotest-vitest
     FixCursorHold-nvim
     ocaml-nvim
-    statix
     conform-nvim
     nvim-lint
     # ^ language support
@@ -149,6 +148,7 @@ with final.pkgs.lib; let
     rust-analyzer
     ocamlPackages.ocaml-lsp
     eslint
+    statix
     # ^ language servers
     ripgrep
     lazygit
