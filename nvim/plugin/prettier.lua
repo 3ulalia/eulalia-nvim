@@ -1,4 +1,6 @@
 -- Exit if prettier isn't available
+-- for the moment it looks like i don't need this, as long as ESLint will apply Prettier rules for me!
+--[[
 if vim.fn.executable('prettier') ~= 1 then
   return
 end
@@ -64,3 +66,4 @@ local none_ls = require("null-ls")
         timeout = 5000,
       }
     })
+]]

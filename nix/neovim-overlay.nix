@@ -144,15 +144,10 @@ with final.pkgs.lib; let
     lua-language-server # duh
     nil # nix LSP
     alejandra # nix formatter
-    nodePackages.typescript-language-server
-    rust-analyzer
-    ocamlPackages.ocaml-lsp
-    eslint
-    statix
+    statix # nix linter
     # ^ language servers
     ripgrep
     lazygit
-    prettier
   ];
 in {
   # This is the neovim derivation

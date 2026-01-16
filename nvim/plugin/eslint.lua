@@ -3,5 +3,9 @@ if vim.fn.executable('eslint') ~= 1 then
 end
 
 -- vim.lsp.set_log_level('debug')
-require('nvim-eslint').setup({})
+require('nvim-eslint').setup({
+  settings = {
+    format = true,
+  }
+})
 
