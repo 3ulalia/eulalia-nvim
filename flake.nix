@@ -4,8 +4,15 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
-    flake-awesome-neovim-plugins.url = "github:m15a/flake-awesome-neovim-plugins";
+    gen-luarc = {
+      url = "github:mrcjkb/nix-gen-luarc-json";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    flake-awesome-neovim-plugins = {
+      url = "github:m15a/flake-awesome-neovim-plugins";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.systems.follows = "flake-utils/systems";
+    };
 
     # Add bleeding-edge plugins here.
     # They can be updated with `nix flake update` (make sure to commit the generated flake.lock)
