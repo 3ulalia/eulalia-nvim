@@ -75,6 +75,7 @@ with final.pkgs.lib; let
     neotest-vitest
     FixCursorHold-nvim
     ocaml-nvim
+    statix
     conform-nvim
     nvim-lint
     # ^ language support
