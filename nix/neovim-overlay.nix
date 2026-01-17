@@ -121,7 +121,7 @@ with final.pkgs.lib; let
       ts-error-translator-nvim
       prettier-nvim
       nvim-eslint
-    # miniDYM
+      MiniDYM
     ]);
     /*
     (mkNvimPlugin
