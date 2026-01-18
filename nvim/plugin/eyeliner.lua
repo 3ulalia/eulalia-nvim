@@ -15,4 +15,13 @@ vim.keymap.set('n', '<leader>qt', '<cmd>TodoQuickFix<cr>', { desc = '[q]uickfix:
 vim.keymap.set('n', '<leader>lt', '<cmd>TodoLocList<cr>', {  desc = '[l]oclist: open [t]odos'  })
 vim.keymap.set('n', '<leader>fo', '<cmd>TodoTelescope<cr>', {desc = '[f]ind tod[o]s with telescope' })
 
-
+vim.diagnostic.config {
+  underline = true,
+  update_in_insert = false,
+  virtual_text = {
+    spacing = 4,
+    source = "if_many",
+    prefix = "●"
+  },
+  severity_sort = true,
+}
