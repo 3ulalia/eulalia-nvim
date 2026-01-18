@@ -94,6 +94,7 @@ with final.pkgs.lib; let
     nvim-unception # Prevent nested neovim sessions | nvim-unception
     nvim-ufo # Ultra fold with modern looking and performance boosting. | https://github.com/kevinhwang91/nvim-ufo
     neo-tree-nvim
+    persistence-nvim
     # ^ Useful utilities
     # libraries that other plugins depend on
     sqlite-lua
