@@ -66,6 +66,7 @@ with final.pkgs.lib; let
     nvim-treesitter-context # Shows floating hover with the current function/block context. | https://github.com/nvim-treesitter/nvim-treesitter-context 
     which-key-nvim # Shows a popup with possible keybindings of the command you started typing. | https://github.com/folke/which-key.nvim
     todo-comments-nvim
+    alpha-nvim
     # ^ UI
     # Motion
     precognition-nvim
@@ -82,6 +83,7 @@ with final.pkgs.lib; let
     ocaml-nvim
     conform-nvim
     nvim-lint
+    ts-comments-nvim
     # ^ language support
     # navigation/editing enhancement plugins
     vim-unimpaired # predefined ] and [ navigation keymaps | https://github.com/tpope/vim-unimpaired/
