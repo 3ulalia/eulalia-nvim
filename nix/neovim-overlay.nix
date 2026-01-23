@@ -75,6 +75,7 @@ with final.pkgs.lib; let
     # ^ Motion
     # language support
     rustaceanvim #  A heavily modified fork of rust-tools.nvim that does not require a setup call and does not depend on nvim-lspconfig. | https://github.com/mrcjkb/rustaceanvim
+    nvim-vtsls
     typst-preview-nvim
     img-clip-nvim
     neotest
@@ -107,6 +108,7 @@ with final.pkgs.lib; let
     nui-nvim
     none-ls-nvim
     nvim-lspconfig 
+    nvim-lsp-file-operations
     # ^ libraries that other plugins depend on
     # bleeding-edge plugins from flake inputs
     # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim

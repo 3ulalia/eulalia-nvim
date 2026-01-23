@@ -9,3 +9,4 @@ vim.g.did_load_plugins_plugin = true
 require('nvim-surround').setup()
 require('solarized-osaka').setup()
 require('ts-comments').setup()
+require('lsp-file-operations').setup()
