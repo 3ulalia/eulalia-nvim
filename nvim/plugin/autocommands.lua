@@ -81,11 +81,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     keymap.set('n', '<M-j>i', vim.lsp.buf.implementation, desc('lsp [jump] to [i]mplementation'))
     keymap.set('n', '<M-p>d', peek_definition, desc('lsp [p]eek [d]efinition'))
     keymap.set('n', '<M-p>t', peek_type_definition, desc('lsp [p]eek [t]ype definition'))
---    keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, desc('lsp add [w]orksp[a]ce folder'))
---    keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, desc('lsp [w]orkspace folder [r]emove'))
---    keymap.set('n', '<space>wl', function()
---      vim.print(vim.lsp.buf.list_workspace_folders())
---    end, desc('[lsp] [w]orkspace folders [l]ist'))
+    --    keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, desc('lsp add [w]orksp[a]ce folder'))
+    --    keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, desc('lsp [w]orkspace folder [r]emove'))
+    --    keymap.set('n', '<space>wl', function()
+    --      vim.print(vim.lsp.buf.list_workspace_folders())
+    --    end, desc('[lsp] [w]orkspace folders [l]ist'))
     -- keymap.set('n', 'wq', vim.lsp.buf.workspace_symbol, desc('lsp [w]orkspace symbol [q]uery'))
     keymap.set('n', '<M-c>n', vim.lsp.buf.rename, desc('lsp [c]hange [n]ame'))
     keymap.set('n', '<M-q>d', vim.lsp.buf.document_symbol, desc('lsp [q]uickfix: [d]ocument symbols'))
@@ -93,6 +93,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
     keymap.set('n', '<M-space>', vim.lsp.buf.hover, desc('[lsp] hover'))
     keymap.set('n', '<M-s>', vim.lsp.buf.signature_help, desc('[lsp] [s]ignature help'))
     keymap.set('n', '<M-CR>', vim.lsp.buf.code_action, desc('[lsp] code action'))
+    keymap.set('n', '<M-S-CR>', function()
+      vim.lsp.buf.code_action({
+        apply = true,
+        context = {
+          only = { "source" },
+          diagnostics = {},
+        },
+      })
+    end, desc('[lsp] source action'))
     keymap.set('n', '<M-l>', vim.lsp.codelens.run, desc('[lsp] run code lens'))
     keymap.set('n', '<M-r>', vim.lsp.codelens.refresh, desc('[lsp] code lenses [r]efresh'))
 
