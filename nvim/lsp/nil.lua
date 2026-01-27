@@ -1,8 +1,3 @@
--- Exit if the language server isn't available
-if vim.fn.executable('nil') ~= 1 then
-  return
-end
-
 local root_files = {
   'flake.nix',
   'default.nix',
@@ -10,11 +5,11 @@ local root_files = {
   '.git',
 }
 
-vim.lsp.start {
+return {
   name = 'nil_ls',
   cmd = { 'nil' },
-  root_dir = vim.fs.dirname(vim.fs.find(root_files, { upward = true })[1]),
-  capabilities = require('user.lsp').make_client_capabilities(),
+  root_markers = root_files,
+--  capabilities = require('user.lsp').make_client_capabilities(),
   settings = {
     nil_ls = {
       formatting = {
