@@ -1,8 +1,15 @@
+local ts_fmt = { "prettierd", "eslint_d" }
+
 require('conform').setup({
   formatters_by_ft = {
     ocaml = { "ocamlformat" },
-    python = { "ruff_fix", "ruff_format", "ruff_organize_imports" }
+    python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+    typescript = ts_fmt,
+    javascript = ts_fmt,
+    typescriptreact = ts_fmt,
+    javascriptreact = ts_fmt,
   },
+
 
   formatters = {
     ocamlformat = {
@@ -23,10 +30,15 @@ require('conform').setup({
 
 })
 
-vim.keymap.set({'n', 'x'}, '<M-f>', function()
+local format = function()
   require("conform").format()
-  require("lint").try_lint()
-  --vim.lsp.buf.format { async = true, bufnr = vim.api.nvim_get_current_buf() }
-end, {desc = '[lsp] [f]ormat buffer'})
+end
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = format
+})
+
+
+vim.keymap.set({'n', 'x'}, '<M-f>', format, {desc = '[lsp] [f]ormat buffer'})
 

@@ -102,7 +102,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         },
       })
     end, desc('[lsp] source action'))
-    keymap.set('n', '<M-l>', vim.lsp.codelens.run, desc('[lsp] run code lens'))
+    keymap.set('n', '<M-S-l>', vim.lsp.codelens.run, desc('[lsp] run code Lens'))
     keymap.set('n', '<M-r>', vim.lsp.codelens.refresh, desc('[lsp] code lenses [r]efresh'))
 
     if client and client.server_capabilities.inlayHintProvider then
