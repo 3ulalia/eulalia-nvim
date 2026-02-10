@@ -100,7 +100,7 @@ vim.diagnostic.config {
 vim.opt.colorcolumn = '100'
 
 -- set colorscheme
-vim.cmd[[colorscheme solarized-osaka]]
+vim.cmd [[colorscheme solarized-osaka]]
 
 -- Native plugins
 cmd.filetype('plugin', 'indent', 'on')
@@ -118,5 +118,5 @@ vim.lsp.enable({
   'vtsls',
   'tinymist',
   'lua-language-server',
+  'verible'
 })
-
