@@ -118,5 +118,6 @@ vim.lsp.enable({
   'vtsls',
   'tinymist',
   'lua-language-server',
-  'verible'
+  'verible',
+  'ccls'
 })
