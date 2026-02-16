@@ -74,6 +74,9 @@ vim.diagnostic.config {
       return prefix_diagnostic('■', diagnostic)
     end,
   },
+  virtual_lines = {
+    current_line = true,
+  },
   signs = {
     text = {
       -- Requires Nerd fonts
