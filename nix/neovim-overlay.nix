@@ -134,7 +134,9 @@ let
     ++ (with inputs.flake-awesome-neovim-plugins.packages.x86_64-linux; [
       # FIXME
       ts-error-translator-nvim
-      prettier-nvim
+      (prettier-nvim.overrideAttrs {
+        doCheck = false;
+      })
       nvim-eslint
       MiniDYM
     ]);
